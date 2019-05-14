@@ -47,7 +47,6 @@ using namespace std;
 
 /// Global Variables ///////////////////////////////////////////////////////////////////////
 
-
 bool DEBUG_MODE=false;
 float WORLD_MAXX, WORLD_MAXY;
 int fieldX1, fieldY1, fieldX2, fieldY2; //playing field boundaries
@@ -284,7 +283,7 @@ void runInvertedPendulum(){
 		
          //1) Enable this only after your fuzzy system has been completed already.
          //Remember, you need to define the rules, membership function parameters and rule outputs.
-         //prevState.F = fuzzy_system(inputs, g_fuzzy_system); //call the fuzzy controller
+         prevState.F = fuzzy_system(inputs, g_fuzzy_system); //call the fuzzy controller
 		 
 		 externalForce=0.0;
 		 externalForce = getKey(); //manual operation
@@ -349,7 +348,7 @@ void runInvertedPendulum(){
    }	
 	
     //2) Enable this only after your fuzzy system has been completed already.
-	//free_fuzzy_rules(&g_fuzzy_system);
+	free_fuzzy_rules(&g_fuzzy_system);
 }
 
 
