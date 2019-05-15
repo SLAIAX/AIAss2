@@ -252,19 +252,19 @@ void initFuzzySystem (fuzzy_system_rec *fl) {
    //Note: The settings of these parameters will depend upon your fuzzy system design
    fl->no_of_inputs = 2;  /* Inputs are handled 2 at a time only */
    fl->no_of_rules = 18;
-   fl->no_of_inp_regions = 4;
+   fl->no_of_inp_regions = 3;
    fl->no_of_outputs = 7;
 	
 	
 	//Sample only
 	//fl->output_values [out_nvl]=-95.0;
-	fl->output_values[out_nl] = -42.0;
-   fl->output_values[out_nm] = -28.0;
-   fl->output_values[out_ns] = -14.0;
+	fl->output_values[out_nl] = -95.0;
+   fl->output_values[out_nm] = -60.0;
+   fl->output_values[out_ns] = -30.0;
    fl->output_values[out_ze] = 0.0;
-   fl->output_values[out_ps] = 14.0;
-   fl->output_values[out_pm] = 28.0;
-   fl->output_values[out_pl] = 42.0;
+   fl->output_values[out_ps] = 30.0;
+   fl->output_values[out_pm] = 60.0;
+   fl->output_values[out_pl] = 95.0;
    //fl->output_values[out_pvl] = 95.0;
 
    fl->rules = (rule *) malloc ((size_t)(fl->no_of_rules*sizeof(rule)));
@@ -363,7 +363,6 @@ float fuzzy_system (float inputs[],fuzzy_system_rec fz) {
    short variable_index,fuzzy_set;
    float sum1 = 0.0,sum2 = 0.0,weight;
    float m_values[MAX_NO_OF_INPUTS];
-	
    
    for (i = 0;i < fz.no_of_rules;i++) {
       for (j = 0;j < fz.no_of_inputs;j++) {
@@ -379,7 +378,6 @@ float fuzzy_system (float inputs[],fuzzy_system_rec fz) {
        sum2 += weight;
    } /* end i  */
  
-	
 	if (fabs(sum2) < TOO_SMALL) {
       cout << "\r\nFLPRCS Error: Sum2 in fuzzy_system is 0.  Press key: " << endl;
       //~ getch();
