@@ -197,7 +197,7 @@ void initFuzzyRules(fuzzy_system_rec *fl) {
 
    fl->rules[no_of_theta_rules + 6].inp_fuzzy_set[0] = in_ps;
    fl->rules[no_of_theta_rules + 6].inp_fuzzy_set[1] = in_ns;
-   fl->rules[no_of_theta_rules + 6].out_fuzzy_set = out_nl;
+   fl->rules[no_of_theta_rules + 6].out_fuzzy_set = out_ze;
 
    fl->rules[no_of_theta_rules + 7].inp_fuzzy_set[0] = in_ps;
    fl->rules[no_of_theta_rules + 7].inp_fuzzy_set[1] = in_ze;
