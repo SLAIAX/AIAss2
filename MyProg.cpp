@@ -260,8 +260,8 @@ void runInvertedPendulum(){
 	//---------------------------------------------------------------
     //***************************************************************
     //Set the initial angle of the pole with respect to the vertical
-    prevState.x = -1.0;
-	prevState.angle = 0;//35.0 * (3.14/180);  //initial angle  = 35 degrees
+    prevState.x = 0; //1.0;
+	prevState.angle = 35.0 * (3.14/180);  //initial angle  = 35 degrees
 	
 	
     initFuzzySystem(&g_fuzzy_system);	
@@ -276,8 +276,8 @@ void runInvertedPendulum(){
 		 drawInvertedPendulumWorld();
 	
 	     //retrieve inputs
-		 inputs[in_theta] = 0; // prevState.angle;
-		 inputs[in_theta_dot] = 0; //prevState.angle_dot;
+		 inputs[in_theta] =  prevState.angle;
+		 inputs[in_theta_dot] = prevState.angle_dot;
 		 inputs[in_x] = prevState.x;
 		 inputs[in_x_dot] = prevState.x_dot;
 		
@@ -300,9 +300,9 @@ void runInvertedPendulum(){
 		 // BEGIN - DYNAMICS OF THE SYSTEM
 
 		 //Calculate the new state of the world
-		 newState.angle_double_dot = 0;//calc_angular_acceleration(prevState);
-		 newState.angle_dot = 0; //prevState.angle_dot + (h * newState.angle_double_dot); 
-		 newState.angle = 0; //prevState.angle + (h * newState.angle_dot);
+		 newState.angle_double_dot = calc_angular_acceleration(prevState);
+		 newState.angle_dot = prevState.angle_dot + (h * newState.angle_double_dot); 
+		 newState.angle = prevState.angle + (h * newState.angle_dot);
 		 newState.F = prevState.F;				 
 		 newState.x_double_dot = calc_horizontal_acceleration(prevState); 
 		 newState.x_dot = prevState.x_dot + (h * newState.x_double_dot);
@@ -322,10 +322,10 @@ void runInvertedPendulum(){
 		 
 		 
 		 prevState.x = newState.x;		
- 		 prevState.angle = 0; //newState.angle;
+ 		 prevState.angle = newState.angle;
 		 prevState.x_dot = newState.x_dot;
-		 prevState.angle_dot = 0; //newState.angle_dot;		
-		 prevState.angle_double_dot = 0; //newState.angle_double_dot;
+		 prevState.angle_dot = newState.angle_dot;		
+		 prevState.angle_double_dot = newState.angle_double_dot;
 		 prevState.x_double_dot = newState.x_double_dot;
 		 //--------------------------	 		 
 		 cart.setX(newState.x);
