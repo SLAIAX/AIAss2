@@ -18,8 +18,8 @@ using namespace std;
 /////////////////////////////////////////////////////
 
 #define MAX_NO_OF_INPUTS 4
-#define MAX_NO_OF_INP_REGIONS 4
-#define MAX_NO_OF_OUTPUT_VALUES 7
+#define MAX_NO_OF_INP_REGIONS 5
+#define MAX_NO_OF_OUTPUT_VALUES 9
 
 #define TOO_SMALL 1e-6
 
