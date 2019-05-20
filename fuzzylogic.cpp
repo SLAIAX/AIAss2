@@ -264,20 +264,20 @@ void initMembershipFunctions(fuzzy_system_rec *fl) {
    /* The theta membership functions */
    //enter the appropriate membership function initialisations here
 
-   fl->inp_mem_fns[in_theta][in_nl] = init_trapz(-0.525, -0.375, 0, 0, left_trapezoid);
-   fl->inp_mem_fns[in_theta][in_ns] = init_trapz(-0.525, -0.375, -0.225, -0.075, regular_trapezoid);
-   fl->inp_mem_fns[in_theta][in_ze] = init_trapz(-0.225, -0.075, 0.075, 0.225, regular_trapezoid);
-   fl->inp_mem_fns[in_theta][in_ps] = init_trapz(0.075, 0.225, 0.375, 0.525, regular_trapezoid);
-   fl->inp_mem_fns[in_theta][in_pl] = init_trapz(0.375, 0.525, 0, 0, right_trapezoid);
+   fl->inp_mem_fns[in_theta][in_nl] = init_trapz(-0.4, -0.3, 0, 0, left_trapezoid);
+   fl->inp_mem_fns[in_theta][in_ns] = init_trapz(-0.4, -0.3, -0.1, 0, regular_trapezoid);
+   fl->inp_mem_fns[in_theta][in_ze] = init_trapz(-0.1, 0, 0, 0.1, regular_trapezoid);
+   fl->inp_mem_fns[in_theta][in_ps] = init_trapz(0, 0.1, 0.3, 0.4, regular_trapezoid);
+   fl->inp_mem_fns[in_theta][in_pl] = init_trapz(0.3, 0.4, 0, 0, right_trapezoid);
   	
    /* The theta dot membership functions */
    //enter the appropriate membership function initialisations here
 
-   fl->inp_mem_fns[in_theta_dot][in_nl] = init_trapz(-0.25, -0.2, 0, 0, left_trapezoid);
-   fl->inp_mem_fns[in_theta_dot][in_ns] = init_trapz(-0.25, -0.2, -0.1, -0.05, regular_trapezoid);
-   fl->inp_mem_fns[in_theta_dot][in_ze] = init_trapz(-0.1, -0.05, 0.05, 0.1, regular_trapezoid);
-   fl->inp_mem_fns[in_theta_dot][in_ps] = init_trapz(0.05, 0.1, 0.2, 0.25, regular_trapezoid);
-   fl->inp_mem_fns[in_theta_dot][in_pl] = init_trapz(0.2, 0.25, 0, 0, right_trapezoid);
+   fl->inp_mem_fns[in_theta_dot][in_nl] = init_trapz(-0.2, -0.15, 0, 0, left_trapezoid);
+   fl->inp_mem_fns[in_theta_dot][in_ns] = init_trapz(-0.2, -0.15, -0.05, 0, regular_trapezoid);
+   fl->inp_mem_fns[in_theta_dot][in_ze] = init_trapz(-0.05, 0, 0, 0.05, regular_trapezoid);
+   fl->inp_mem_fns[in_theta_dot][in_ps] = init_trapz(0, 0.05, 0.15, 0.2, regular_trapezoid);
+   fl->inp_mem_fns[in_theta_dot][in_pl] = init_trapz(0.15, 0.2, 0, 0, right_trapezoid);
 
    return;
 }
