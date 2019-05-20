@@ -30,7 +30,7 @@ void initFuzzyRules(fuzzy_system_rec *fl) {
 
    fl->rules[1].inp_fuzzy_set[0] = in_nl;
    fl->rules[1].inp_fuzzy_set[1] = in_ns;
-   fl->rules[1].out_fuzzy_set =  out_nl;
+   fl->rules[1].out_fuzzy_set =  out_nl; //test
 
    fl->rules[2].inp_fuzzy_set[0] = in_nl;
    fl->rules[2].inp_fuzzy_set[1] = in_ze;
