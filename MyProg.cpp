@@ -47,7 +47,7 @@ using namespace std;
 
 /// Global Variables ///////////////////////////////////////////////////////////////////////
 
-bool DEBUG_MODE=true;
+bool DEBUG_MODE=false;
 float WORLD_MAXX, WORLD_MAXY;
 int fieldX1, fieldY1, fieldX2, fieldY2; //playing field boundaries
 BoundaryType worldBoundary,deviceBoundary;
@@ -260,8 +260,8 @@ void runInvertedPendulum(){
 	//---------------------------------------------------------------
     //***************************************************************
     //Set the initial angle of the pole with respect to the vertical
-    prevState.x = 0; //1.0;
-	prevState.angle = 35.0 * (3.14/180);  //initial angle  = 35 degrees
+    prevState.x = -1; //1.0;
+	prevState.angle = 30.0 * (3.14/180);  //initial angle  = 35 degrees
 	
 	
     initFuzzySystem(&g_fuzzy_system);	
@@ -278,8 +278,8 @@ void runInvertedPendulum(){
 	     //retrieve inputs
 		 inputs[in_theta] =  prevState.angle;
 		 inputs[in_theta_dot] = prevState.angle_dot;
-		 inputs[in_x] = 0;//prevState.x;
-		 inputs[in_x_dot] = 0;//prevState.x_dot;
+		 inputs[in_x] = prevState.x;
+		 inputs[in_x_dot] = prevState.x_dot;
 		
          //1) Enable this only after your fuzzy system has been completed already.
          //Remember, you need to define the rules, membership function parameters and rule outputs.
